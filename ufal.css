@@ -1,0 +1,689 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Fira+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+/* Marp theme: UFAL */
+/* Inspired by Milan Straka's SliMD: https://github.com/ufal/slimd */
+/* @theme ufal */
+
+/* Colors */
+:root {
+    --ufal-orange: #f47b20;
+    /* translucent gray used in header/footer blocks */
+    --ufal-gray: #EFEFEF;
+    --text: #252525;
+    --muted: #888;
+}
+
+/* Base typography: Use Fira Sans per requirement */
+section {
+    font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    line-height: 1.5;
+    font-size: 30px;
+    color: var(--text);
+    background-color: #fff;
+}
+
+ul,
+ol {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+li>ul,
+li>ol {
+    margin-top: 0px;
+}
+
+ol {
+    margin-left: 4px;
+}
+
+/* Code font */
+code,
+pre,
+pre code {
+    font-family: "Consolas", "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    color: #333;
+}
+
+section {
+    box-sizing: border-box;
+    padding: 2.2cm 1.2cm 1.3cm 1.2cm;
+    /* top includes header space; bottom includes footer space */
+}
+
+/* Header bar with UFAL logo */
+section::before {
+    content: attr(data-marpit-header);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1.25cm;
+    padding: 0.25cm 1.5cm 0.25cm 0.25cm;
+    background-color: var(--ufal-gray);
+    background-repeat: no-repeat;
+    background-size: 1.20cm .95cm;
+    background-position: calc(100% - .35cm) 50%;
+}
+
+section:not(.no-logo)::before {
+    background-image: url("assets/ufal.svg");
+}
+
+section:not(.part)>h1:first-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.25cm;
+    padding: 0.25cm 1.5cm 0.25cm 0.25cm;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: var(--ufal-orange);
+    font-weight: 700;
+    font-size: 40px;
+    z-index: 100 !important;
+}
+
+
+section[data-marpit-advanced-background="content"]>h1:first-of-type {
+    z-index: 100 !important;
+}
+
+section.center {
+    text-align: center;
+}
+
+section.right {
+    text-align: right;
+}
+
+section.middle {
+    display: grid;
+    align-content: center;
+}
+
+section.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+section.wide {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+section.large {
+    font-size: 34px;
+}
+
+section.huge {
+    font-size: 38px;
+}
+
+section.small {
+    font-size: 20px;
+}
+
+section.tiny {
+    font-size: 15px;
+}
+
+
+a,
+a:visited {
+    color: var(--ufal-orange);
+    text-decoration: underline;
+}
+
+
+/* Title slide styling */
+/* Title slide */
+section.title h2:first-of-type {
+    font-size: 60px;
+    margin-top: 1em;
+    font-weight: 700;
+    color: var(--ufal-orange);
+}
+
+section.title h3:first-of-type {
+    margin-top: -15px;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+section.title h4:first-of-type {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 7cm;
+}
+
+section.title h5:first-of-type {
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 5cm;
+    display: inline-block;
+    padding: .2em .5em .2em 1.5em;
+    border-radius: .5em;
+    color: var(--text);
+    background-color: var(--ufal-gray);
+    background-image: url("assets/calendar.svg");
+    background-repeat: no-repeat;
+    background-size: .87em .8em;
+    background-position: .4em 45%;
+}
+
+/* Title slide footer zone with logos  */
+section.title::after {
+    content: attr(data-marpit-header);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3cm;
+    background-color: var(--ufal-gray);
+    background-repeat: no-repeat, no-repeat;
+    background-image: url("assets/cuni.svg"), url("assets/ufal.svg");
+    background-size: 5.7cm 5.7cm, 7cm 1.7cm;
+    background-position: .45cm 50%, 3.75cm 50%;
+}
+
+/* Marp injects a wrapper for advanced backgrounds; keep it under content */
+section .marpit-background {
+    z-index: -1 !important;
+}
+
+/* Optional langtech variant adds two more logos */
+section.title.langtech::after {
+    background-image: url("assets/cuni.svg"), url("assets/ufal.svg"), url("assets/langtech.svg"), url("assets/opvv.svg");
+    background-size: 5.7cm 5.7cm, 7cm 1.7cm, 7cm 1.8cm, 8.5cm 1.8cm;
+    background-position: .45cm 50%, 3.75cm 50%, 6.85cm 50%, 10.25cm 50%;
+}
+
+/* CC license variants for title slide (badge in the lower-right area) */
+section.title.cc-by-nc-sa::after,
+section.title.cc-by-sa::after {
+    background-repeat: no-repeat, no-repeat;
+}
+
+section.title.cc-by-nc-sa::after {
+    background-image: url("assets/cuni.svg"), url("assets/ufal.svg"), url("assets/by-nc-sa.eu.svg");
+    background-size: 5.7cm 5.7cm, 7cm 1.7cm, 3.42cm 1.2cm;
+    background-position: .45cm 50%, 3.75cm 50%, calc(100% - 1.5cm) 1cm;
+}
+
+section.title.cc-by-sa::after {
+    background-image: url("assets/cuni.svg"), url("assets/ufal.svg"), url("assets/by-sa.svg");
+    background-size: 5.7cm 5.7cm, 7cm 1.7cm, 3.42cm 1.2cm;
+    background-position: .45cm 50%, 3.75cm 50%, calc(100% - 1.5cm) 1cm;
+}
+
+/* Support union of langtech and CC license classes */
+section.title.langtech.cc-by-nc-sa::after {
+    background-image:
+        url("assets/cuni.svg"),
+        url("assets/ufal.svg"),
+        url("assets/langtech.svg"),
+        url("assets/opvv.svg"),
+        url("assets/by-nc-sa.eu.svg");
+    background-size:
+        5.7cm 5.7cm,
+        7cm 1.7cm,
+        7cm 1.8cm,
+        8.5cm 1.8cm,
+        3.42cm 1.2cm;
+    background-position:
+        .45cm 50%,
+        3.75cm 50%,
+        6.85cm 50%,
+        10.25cm 50%,
+        calc(100% - 1.5cm) 1cm;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+section.title.langtech.cc-by-sa::after {
+    background-image:
+        url("assets/cuni.svg"),
+        url("assets/ufal.svg"),
+        url("assets/langtech.svg"),
+        url("assets/opvv.svg"),
+        url("assets/by-sa.svg");
+    background-size:
+        5.7cm 5.7cm,
+        7cm 1.7cm,
+        7cm 1.8cm,
+        8.5cm 1.8cm,
+        3.42cm 1.2cm;
+    background-position:
+        .45cm 50%,
+        3.75cm 50%,
+        6.85cm 50%,
+        10.25cm 50%,
+        calc(100% - 1.5cm) 1cm;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+section.title::after,
+section[class*="title"]::after {
+    color: transparent !important;
+    text-shadow: none !important;
+}
+
+/* Section slide */
+section.part {
+    background-color: var(--ufal-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+section.part::before {
+    background-image: none;
+}
+
+section.part h1:first-of-type {
+    margin: 0;
+    padding: .4cm 1.5cm;
+    background-color: #f47b20ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    min-width: 20cm;
+    min-height: 2cm;
+}
+
+/* Summary slide */
+section.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--ufal-gray);
+}
+
+/* Apply the box to the first non-heading content element */
+section.summary> :not(h1, h2, h3, h4):first-child,
+section.summary> :is(h1, h2, h3, h4)+ :not(h1, h2, h3, h4) {
+    width: 25cm;
+    margin: 0 auto;
+    padding: 0.5cm 1.5cm;
+    border: .15cm solid var(--ufal-orange);
+    background: #fff;
+}
+
+/* Title slide styling */
+/* Title slide */
+section.summary h2:first-of-type {
+    font-size: 1.5em;
+    margin-top: 0cm;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    color: var(--ufal-orange);
+}
+
+section.summary h3:first-of-type {
+    margin-top: 1cm;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--ufal-orange);
+    font-family: "Fira Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+section.summary h4:first-of-type {
+    margin-bottom: 1cm;
+    margin-top: 0cm;
+    width: max-content;
+    min-width: 10cm;
+    background: var(--ufal-orange);
+    color: #fff;
+    font-size: 20px !important;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1cm 0.5cm;
+    box-sizing: border-box;
+    z-index: 10;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Headings and spacing (approximate Slimd) */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    margin-top: .3em;
+    margin-bottom: .4em;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.25em;
+    /* color: #434343; */
+}
+
+h4 {
+    font-size: 1.1em;
+    /* color: #555; */
+}
+
+h5 {
+    /* Use for muted text */
+    font-size: 0.8em;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Code blocks and inline code */
+pre,
+code {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+pre {
+    padding: .5em;
+    background: #eee;
+    overflow-x: auto;
+    font-size: 22px;
+    text-align: left;
+}
+
+
+/* Tables */
+table {
+    margin-top: 30px;
+    line-height: 1.7;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: .25em;
+    border: 1px solid #999;
+}
+
+th {
+    background-color: #e9470080;
+}
+
+table tr:nth-of-type(even) {
+    background-color: #ccc8;
+}
+
+/* Convenience variants for full-bleed tables like Slimd */
+section.tablewide table {
+    width: 100%;
+}
+
+section.tablehigh table {
+    height: 100%;
+}
+
+section.tablefull table {
+    width: 100%;
+    height: 100%;
+}
+
+/* Pagination on the right */
+section::after {
+    content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+    position: absolute;
+    right: 8px;
+    bottom: 2px;
+    height: .9cm;
+    display: flex;
+    align-items: center;
+    padding: 0 .3cm;
+    font-size: 20px !important;
+    color: var(--text);
+    justify-content: flex-end;
+    text-align: right;
+}
+
+/* Custom header box for normal slides */
+header {
+    position: absolute;
+    top: 0;
+    right: 2.5cm;
+    height: 1.8cm;
+    color: var(--muted);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    z-index: 10;
+}
+
+/* Custom footer box for normal slides */
+footer {
+    content: attr(data-marpit-footer);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 8cm;
+    min-height: 0.5cm;
+    background: var(--ufal-orange);
+    color: #fff;
+    font-size: 20px !important;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.03cm 0.5cm;
+    box-sizing: border-box;
+    z-index: 10;
+    text-align: left;
+}
+
+
+/* Hide footer on these slides */
+section.title footer,
+section.part footer,
+section.summary footer,
+section.blank footer {
+    display: none;
+}
+
+/* Blank slide: no header, no footer, just pagination */
+section.blank::before {
+    display: none;
+}
+
+section.blank {
+    padding: 1.2cm;
+}
+
+section.blank h1:first-of-type {
+    display: none;
+}
+
+
+/* Blockquotes */
+blockquote {
+    margin: 0 10 0 0;
+    padding: 0 1em;
+    border-left: 1px solid #999;
+    border-width: 0.2em;
+    color: var(--foreground);
+}
+
+blockquote::before {
+    top: 0;
+    left: 0;
+}
+
+blockquote::after {
+    right: 0;
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+/* Columns */
+section.col2 {
+    columns: 2;
+    gap: 70px;
+    display: block;
+}
+
+section.col3 {
+    columns: 3;
+    display: block;
+}
+
+section.col4 {
+    columns: 4;
+    display: block;
+}
+
+section.col2,
+section.col3,
+section.col4 {
+    padding-top: 2.5cm;
+    /* match section's top padding */
+    box-sizing: border-box;
+}
+
+section.col2>*,
+section.col3>*,
+section.col4>* {
+    margin-top: 0;
+}
+
+section.col2 h2,
+section.col3 h2,
+section.col4 h2 {
+    break-before: column;
+}
+
+section.col2 h3,
+section.col3 h3,
+section.col4 h3 {
+    break-before: column;
+}
+
+
+/* Image positioning */
+img[alt~="r"] {
+    float: right;
+}
+
+img[alt~="l"] {
+    float: left;
+}
+
+img[alt~="c"] {
+    display: block;
+    margin: 0 auto;
+}
+
+/* use on containing element to display images side by side */
+.img-align {
+    display: flex;
+    height: 80%;
+    /* control location on y-axis */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* Highlight.js colors */
+.hljs {
+    display: block;
+    background: #eeeeee;
+    padding: .5em;
+    color: #333;
+    overflow-x: auto
+}
+
+.hljs-comment,
+.hljs-meta {
+    color: #888
+}
+
+.hljs-emphasis,
+.hljs-quote,
+.hljs-string,
+.hljs-strong,
+.hljs-template-variable,
+.hljs-variable,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+    color: #f47b20
+}
+
+.hljs-attribute,
+.hljs-bullet,
+.hljs-literal,
+.hljs-symbol {
+    color: #0086b3
+}
+
+.hljs-name,
+.hljs-section {
+    color: #63a35c
+}
+
+.hljs-tag {
+    color: #333
+}
+
+.hljs-attr,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-selector-pseudo,
+.hljs-title,
+.hljs-number {
+    color: #795da3
+}
+
+.hljs-addition {
+    color: #55a532;
+    background-color: #eaffea
+}
+
+.hljs-deletion {
+    color: #bd2c00;
+    background-color: #ffecec
+}
+
+.hljs-link {
+    text-decoration: underline
+}
