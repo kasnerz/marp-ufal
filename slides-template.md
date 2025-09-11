@@ -25,7 +25,15 @@ Combine as needed: title langtech cc-by-sa
 #### Zdeněk Kasner
 ##### 9 Sep 2025
 
-<!-- All the headers are optional -->
+<div style="position: absolute; bottom: 15px; left: 50%; width: 100%; text-align: left; font-size: 17px; z-index: 100">
+Charles University<br>
+Faculty of Mathematics and Physics<br>
+Institute of Formal and Applied Linguistics
+</div>
+
+<div style="position: absolute; bottom: 12px; right: 48px; width: 100%; text-align: right; font-size: 14px; z-index: 100">
+unless otherwise stated
+</div>
 
 ---
 
@@ -56,12 +64,12 @@ Combine as needed: title langtech cc-by-sa
 ---
 
 
-<!-- <style scoped>
+<style scoped>
 /* Hide bullets  */
 ul { list-style: none; padding-left: 0; margin-left: 0; line-height: 1.8 }
 ul > li { margin-left: 0; }
 ul > li::marker { content: ""; }
-</style> -->
+</style>
 
 # ÚFAL Marp Theme
 
@@ -89,17 +97,23 @@ ul > li::marker { content: ""; }
 
 ---
 
-You can use the Markdown syntax for creating slides:
 
 # Markdown 101
-### `###` For example, this is an H3 header.
+
+
+You can use the Markdown syntax for creating slides.
+### `###` This is an H3 header.
 - This is a bulleted list.
   - With a nested item.
 1. And this is a numbered list.
 
-You can also use \*\***bold text**\*\*, \**italic text*\*, \~\~~~strikethrough~~\~\~,  \[[links](https://ufal.cz)\]\(https://ufal.cz), `monospace` text, etc.
+You can also use \*\***bold text**\*\*, \**italic text*\*,  \[[links](https://ufal.cz)\]\(https://ufal.cz), `monospace`, etc.
 
 The `---` sequence works as the slide delimiter.
+
+<hr>
+
+<small>You can also [enable HTML](https://github.com/orgs/marp-team/discussions/349#discussioncomment-3618297) for some advanced tweaks.</small>
 
 ---
 
@@ -121,6 +135,7 @@ Combine classes: `<!-- _class: center middle huge -->`
 ---
 
 <!-- _class: center -->
+<sub>[**source**: Our experiments](https://github.com/ufal)</sub>
 
 # Working with images
 ## Image placement and sizing
@@ -131,7 +146,8 @@ Use [Marp image syntax](https://marpit.marp.app/image-syntax) to include an imag
 ```
 ![height:100px](img/transformer.png)
 
-Or [enable HTML tags](https://github.com/marp-team/marp-cli#:~:text=Marpit%20based%20engine-,html,-boolean%20%7C%20object) to use `<img>` elements:
+
+Or [enable HTML](https://github.com/orgs/marp-team/discussions/349#discussioncomment-3618297) to use `<img>` elements:
 
 ```html
 <img src="img/transformer.png" style="width: 100px;"/>
@@ -184,21 +200,22 @@ function greet(name) {
 }
 ```
 
-
+<!-- For more fine-grained manipulation with columns, use  -->
 
 
 
 ---
 
 # Tables
-<!-- _class: tablewide -->
-<!-- _header: '[**source**: Our experiments](https://github.com/ufal)' -->
+<!-- _class: tablewide source -->
 
 | Model         | BLEU ↑   | ROUGE-L ↑ | Parameters | Training Time |
 | ------------- | -------- | --------- | ---------- | ------------- |
 | Transformer   | 34.2     | 56.8      | 110M       | 12h           |
 | GPT-3.5       | 38.7     | 61.2      | 175B       | -             |
 | **Our Model** | **41.3** | **64.1**  | 125M       | 8h            |
+
+<sub>[**source**: Our experiments](https://github.com/ufal)</sub>
 
 - The `tablewide` class stretches the table to full width.
 - You can add the source link (or any other text) to the top right <br>using the `<!-- _header: text -->` directive.
@@ -224,30 +241,40 @@ function greet(name) {
 2) Of course this works only in HTML, not PDFs.
 3) You can still copy the slides for PDF animations.
 
+<!-- 
+You can also animate anything using:
+
+<div data-marpit-fragment>
+
+text
+
+</div> 
+-->
+
 ---
 
 
 <!-- _class: part -->
 # Practical tips
 
+
 ---
 
-<!-- _class: col2 -->
+<!-- When we use `bg` on the slide, it is currently not possible to use the `h1` header. Instead, we can use the `_header` directive. -->
 
-# Development
+<!-- _header: Development -->
 
 ## VSCode plugin
 Install the [Marp VSCode plugin](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) to get **live preview**.
 
-<br>
 
 Also see the following settings:
 - `markdown.marp.themes`: Add the path to `ufal.css`.
 - `markdown.marp.html`: Set to `all` <small>(if you trust your code)</small>.
   
-<div class="img-align">
-<img src="img/vscode.png" width="500px">
-</div>
+![bg contain right 50%](img/vscode.png)
+
+
 
 ---
 
@@ -281,6 +308,17 @@ $ marp slide-deck.md -o converted.pdf
 $ marp slide-deck.md -o converted.pptx
 ```
 
+---
+
+# Links
+
+- [How to code beautiful presentations with Marp](https://xicu.info/en/posts/marp/)
+- [Community themes](https://rnd195.github.io/marp-community-themes/)
+- [Arivu Theme](https://github.com/gsm-arivu/gsm-arivu.github.io)
+- [Live slides preview for development](https://github.com/boborbt/marp-dev-preview)
+- [Marpyter - Marp for JupyterLab](https://github.com/trungleduc/marpyter)
+- [Obsidian plugin](https://github.com/samuele-cozzi/obsidian-marp-slides)
+- [Discussion forum](https://github.com/orgs/marp-team/discussions)
 
 
 ---
@@ -294,3 +332,20 @@ Marp is easy to learn and easy to use.
 Give **Marp** a chance! 😎
 
 ### https://github.com/kasnerz/marp-ufal
+
+---
+
+# Bonus
+
+## Panels
+
+<div class="panel">
+
+* panel 1 
+  - content<br>more<br>content<br>and even more content
+* panel 2
+  - some other content
+* panel 3
+  - yet another content
+</div>
+

@@ -53,7 +53,7 @@ section {
 
 /* Header bar with UFAL logo */
 section::before {
-    content: attr(data-marpit-header);
+    content: attr(data-header);
     position: absolute;
     left: 0;
     right: 0;
@@ -64,6 +64,10 @@ section::before {
     background-repeat: no-repeat;
     background-size: 1.20cm .95cm;
     background-position: calc(100% - .35cm) 50%;
+    color: var(--ufal-orange);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
 }
 
 section:not(.no-logo)::before {
@@ -83,7 +87,6 @@ section:not(.part)>h1:first-of-type {
     color: var(--ufal-orange);
     font-weight: 700;
     font-size: 40px;
-    z-index: 100 !important;
 }
 
 
@@ -214,15 +217,15 @@ section.title.cc-by-sa::after {
 }
 
 section.title.cc-by-nc-sa::after {
-    background-image: var(--svg-cuni), var(--svg-ufal), var(--svg-by-nc-sa.eu);
+    background-image: var(--svg-cuni), var(--svg-ufal), var(--svg-by-nc-sa);
     background-size: 5.7cm 5.7cm, 7cm 1.7cm, 3.42cm 1.2cm;
-    background-position: .45cm 50%, 3.75cm 50%, calc(100% - 1.5cm) 1cm;
+    background-position: .45cm 50%, 3.75cm 50%, calc(100% - 1.5cm) 0.8cm;
 }
 
 section.title.cc-by-sa::after {
     background-image: var(--svg-cuni), var(--svg-ufal), var(--svg-by-sa);
     background-size: 5.7cm 5.7cm, 7cm 1.7cm, 3.42cm 1.2cm;
-    background-position: .45cm 50%, 3.75cm 50%, calc(100% - 1.5cm) 1cm;
+    background-position: .45cm 50%, 3.75cm 50%, calc(100% - 1.5cm) 0.8cm;
 }
 
 /* Support union of langtech and CC license classes */
@@ -232,7 +235,7 @@ section.title.langtech.cc-by-nc-sa::after {
         var(--svg-ufal),
         var(--svg-langtech),
         var(--svg-opvv),
-        var(--svg-by-nc-sa.eu);
+        var(--svg-by-nc-sa);
     background-size:
         5.7cm 5.7cm,
         7cm 1.7cm,
@@ -478,19 +481,26 @@ section::after {
     text-align: right;
 }
 
-/* Custom header box for normal slides */
-header {
-    position: absolute;
-    top: 0;
-    right: 2.5cm;
-    height: 1.8cm;
-    color: var(--muted);
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+sub {
+    font-size: 0.6em;
+    line-height: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: block;
     text-align: right;
-    z-index: 10;
+}
+
+section.source sub {
+    position: absolute;
+    top: 23px;
+    right: 100px;
+    text-align: right;
+}
+
+
+/* Header is displayed using section::before so that it works for slides with backgrounds */
+header {
+    display: none;
 }
 
 /* Custom footer box for normal slides */
@@ -601,12 +611,41 @@ section.col4 h3 {
     break-before: column;
 }
 
-.columns {
+/* You can use these like this:
+
+<div class="columnsX">
+<div>
+
+1st column
+
+</div><div>
+
+2nd column
+
+</div>
+Note the empty lines are necessary for Markdown to work.
+*/
+.columns2 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
 }
 
+.columns3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.columns4 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+hr {
+    color: var(--text);
+}
 
 /* Image positioning */
 img[alt~="r"] {
@@ -697,6 +736,67 @@ img[alt~="c"] {
 .hljs-link {
     text-decoration: underline
 }
+
+
+/* Panel and Card Grid Classes - Integrated from Arivu Theme */
+
+/* Panel container layout */
+.panel ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+/* Panel box */
+.panel>ul>li {
+    flex: 1 1 23%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4);
+    min-width: 220px;
+    min-height: 100px;
+    background-color: var(--ufal-orange);
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove bullet marker */
+.panel li::marker {
+    display: none;
+}
+
+/* Panel heading */
+.panel>ul>li {
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.8;
+    text-align: center;
+    padding: 0px;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* Panel content area */
+.panel>ul>li>ul {
+    background-color: #fdf2e9;
+    color: var(--text);
+    flex: 1;
+    padding: 14px;
+    margin: 0;
+    font-size: 0.95em;
+    font-weight: normal;
+    line-height: 1.8;
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 /* We need to include SVGs here due this issue: https://github.com/orgs/marp-team/discussions/86 */
