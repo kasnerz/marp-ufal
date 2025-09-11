@@ -55,14 +55,13 @@ Combine as needed: title langtech cc-by-sa
 
 ---
 
-<!-- _class: large -->
 
-<style scoped>
+<!-- <style scoped>
 /* Hide bullets  */
 ul { list-style: none; padding-left: 0; margin-left: 0; line-height: 1.8 }
 ul > li { margin-left: 0; }
 ul > li::marker { content: ""; }
-</style>
+</style> -->
 
 # ÚFAL Marp Theme
 
@@ -70,8 +69,7 @@ ul > li::marker { content: ""; }
  <!-- 
     This image is included using HTML. Turn on `markdown.marp.html` in VSCode and use the `--html` flag for marp-cli for it to render correctly. 
  -->
-
- * 🔶 **Easy editing**: Enjoy the power of your favourite Markdown editor.
+ * 🔶 **Easy editing**: Create slides in your favourite Markdown editor.
  * <img src="img/github.svg" width="30px" style="margin-left: 5px; margin-right: 3px;"> **Git versioning**: Slides are simple plain text files (+assets).
 *  🪧 **LaTeX support**: Proper support of $\LaTeX$ typesetting.
 *  ✒️ **Consistent style:** Everything is nicely aligned without extra effort.
