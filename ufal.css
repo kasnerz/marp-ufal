@@ -671,6 +671,11 @@ img[alt~="c"] {
 }
 
 
+.emoji {
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+}
+
 /* Highlight.js colors */
 .hljs {
     display: block;
