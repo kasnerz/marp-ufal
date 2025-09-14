@@ -58,6 +58,7 @@ section::before {
     left: 0;
     right: 0;
     top: 0;
+    text-align: left;
     height: 1.25cm;
     padding: 0.25cm 1.5cm 0.25cm 0.25cm;
     background-color: var(--ufal-gray);
@@ -79,10 +80,10 @@ section:not(.part)>h1:first-of-type {
     top: 0;
     left: 0;
     right: 0;
-    height: 1.25cm;
-    padding: 0.25cm 1.5cm 0.25cm 0.25cm;
+    padding: 0.06cm 0.25cm 0.25cm 0.25cm;
     margin: 0;
-    display: flex;
+    display: block;
+    text-align: left;
     align-items: center;
     color: var(--ufal-orange);
     font-weight: 700;
