@@ -684,13 +684,13 @@ img[alt~="c"] {
     margin: 0 auto;
 }
 
-/* use on containing element to display images side by side */
-.img-align {
+/* Horizontal centering */
+p:has(> img[alt~="m"]) {
     display: flex;
-    height: 80%;
-    /* control location on y-axis */
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* Substract header and footer */
+    min-height: calc(100% - 1.25cm - 0.5cm);
 }
 
 img[alt~="i"] {
@@ -702,9 +702,16 @@ img[alt~="i"] {
     padding-right: 0.15em;
 }
 
+img[alt~="b"] {
+    border: 1px solid grey;
+    border-radius: 0.2em;
+    padding: 0.1em;
+}
+
 .emoji {
     padding-left: 0.1em;
     padding-right: 0.1em;
+    height: 0.9em !important;
 }
 
 /* Highlight.js colors */

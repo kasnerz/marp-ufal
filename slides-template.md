@@ -56,10 +56,7 @@ unless otherwise stated
 
 ###
 
-<div class="img-align">
-<img src="img/marp.png" width="400px">
-</div>
-
+![w:400 m c](img/marp.png)
 
 ---
 
@@ -274,7 +271,7 @@ Also see the following settings:
 - `markdown.marp.themes`: Add the path to `ufal.css`.
 - `markdown.marp.html`: Set to `all` <small>(if you trust your code)</small>.
   
-![bg contain right 50%](img/vscode.png)
+![bg contain right 90%](img/vscode.png)
 
 ---
 
@@ -323,15 +320,20 @@ $ marp slide-deck.md -o converted.pptx
 
 ---
 
-<!-- _class: summary center -->
+<!-- _class: summary -->
 
-#### Marp is cool
-## Takeaways
 
-Marp is easy to learn and easy to use.
-Give **Marp** a chance! 😎
+#### ÚFAL Marp Template
+## Summary
 
-### https://github.com/kasnerz/marp-ufal
+- This template is... 
+  - not as tremendous as the LaTeX one.
+  - not that easy to collaborate on as the Google Slides one.
+  - not equipped with as many features as the SliMD one.
+- But it is simple to use and looks great.
+
+
+### [https://github.com/kasnerz/marp-ufal](https://github.com/kasnerz/marp-ufal)
 
 ---
 
