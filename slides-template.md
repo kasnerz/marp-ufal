@@ -71,11 +71,11 @@ ul > li::marker { content: ""; }
 # ÚFAL Marp Theme
 
 ### Main features
-* 📝 **Easy editing**: Create slides in your favourite Markdown editor.
-* ![i](img/github.svg) **Git versioning**: Slides are simple plain text files (+assets).
-* 🖲️ **Wide format support:** Live VSCode and HTML preview, export to PDF and PPTX.
-*  🪧 **LaTeX support**: Proper typesetting of $\LaTeX$ formulas.
-*  ⚡️ **Powerful content:** You can use full-fledged HTML alongside Markdown if needed.
+* 📝 **Easy editing**: Create slides in your favourite Markdown editor with live preview.
+* ![i](img/github.svg) **Git-friendly**: You can version-control your presentations.
+* 🖲️ **Multiple export formats:** Export to PDF, HTML, or PPTX.
+*  🪧 **LaTeX support**: Mathematical typesetting with MathJax/KaTeX.
+*  ⚡️ **HTML integration:** Use advanced HTML snippets alongside Markdown.
 *  ✒️ **Consistency:** Everything is nice and aligned without too much effort.
 * 🦶 **Auto footer**: No more manual copying of the bottom orange bar 💪
 * ![i](img/marp_logo.png) **Popular framework**:  Marp has good [user support](https://github.com/orgs/marp-team/discussions) and [docs](https://marpit.marp.app).
