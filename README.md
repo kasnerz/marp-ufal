@@ -4,8 +4,10 @@ A slide template for ÚFAL presentations with [Marp](https://marp.app/).
 
 Inspired by the ÚFAL Google Slides template and Milan Straka's [SliMD](https://github.com/ufal/slimd) template.
 
+<p>
 <img src="img/title.png" width="300px"/>
 <img src="img/table.png" width="300px"/>
+</p>
 
 ## Main Features
 
