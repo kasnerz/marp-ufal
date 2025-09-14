@@ -2,7 +2,7 @@
 
 A slide template for ÚFAL presentations with [Marp](https://marp.app/).
 
-Inspired by the ÚFAL Google Slides template and Milan Straka's [SliMD](https://github.com/ufal/slimd) template.
+Inspired by the Jindřich Libovický's [ÚFAL Google Slides template](https://docs.google.com/presentation/d/1cE1fyaG9qWXJo5Upzi_i8mXMqUGbuYDgwqvHGYRgBSE/edit?usp=sharing) and Milan Straka's [SliMD template](https://github.com/ufal/slimd).
 
 <p>
 <img src="img/title.png" width="300px"/>
@@ -123,7 +123,7 @@ $$
 
 Contributions are welcome! 🫵
 
-## 📖 Resources
+## Resources
 
 - [Marp Documentation](https://marpit.marp.app/)
 - [Marp Community Themes](https://rnd195.github.io/marp-community-themes/)
