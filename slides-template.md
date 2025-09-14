@@ -1,8 +1,8 @@
 ---
 marp: true
-# In VSCode, make sure ufal.css is registered in VS Code settings (markdown.marp.themes)
+# In VSCode, make sure ufal.css is registered in VS Code settings (markdown.marp.themes). For marp-cli, use `--theme-set [path_to_css]`.
 theme: ufal
-# Pagination can be also turned on/off individually
+# Pagination can be also turned on/off individually, see Marp docs
 paginate: true
 # Orange box at the bottom on each slide (delete to hide entirely)
 footer: ÚFAL Marp slides template
@@ -25,13 +25,13 @@ Combine as needed: title langtech cc-by-sa
 #### Zdeněk Kasner
 ##### 9 Sep 2025
 
-<div style="position: absolute; bottom: 15px; left: 50%; width: 100%; text-align: left; font-size: 17px; z-index: 100">
+<div class="title-footer">
 Charles University<br>
 Faculty of Mathematics and Physics<br>
 Institute of Formal and Applied Linguistics
 </div>
 
-<div style="position: absolute; bottom: 12px; right: 48px; width: 100%; text-align: right; font-size: 14px; z-index: 100">
+<div class="license-footer">
 unless otherwise stated
 </div>
 
@@ -74,16 +74,14 @@ ul > li::marker { content: ""; }
 # ÚFAL Marp Theme
 
 ### Main features
- <!-- 
-    This image is included using HTML. Turn on `markdown.marp.html` in VSCode and use the `--html` flag for marp-cli for it to render correctly. 
- -->
- * 🔶 **Easy editing**: Create slides in your favourite Markdown editor.
- * <img src="img/github.svg" width="30px" style="margin-left: 5px; margin-right: 3px;"> **Git versioning**: Slides are simple plain text files (+assets).
-*  🪧 **LaTeX support**: Proper support of $\LaTeX$ typesetting.
-*  ✒️ **Consistent style:** Everything is nicely aligned without extra effort.
-*  ⚡️ **Powerful content:** You can use full-fledged HTML if needed.
-* 🦶 **Auto-footer**: No more manual copying of the bottom orange bar 💪
-* 📃 **Popular framework**:  Marp has good [user support](https://github.com/orgs/marp-team/discussions) and [docs](https://marpit.marp.app).
+* 📝 **Easy editing**: Create slides in your favourite Markdown editor.
+* ![i](img/github.svg) **Git versioning**: Slides are simple plain text files (+assets).
+* 🖲️ **Wide format support:** Live VSCode and HTML preview, export to PDF and PPTX.
+*  🪧 **LaTeX support**: Proper typesetting of $\LaTeX$ formulas.
+*  ⚡️ **Powerful content:** You can use full-fledged HTML alongside Markdown if needed.
+*  ✒️ **Consistency:** Everything is nice and aligned without too much effort.
+* 🦶 **Auto footer**: No more manual copying of the bottom orange bar 💪
+* ![i](img/marp_logo.png) **Popular framework**:  Marp has good [user support](https://github.com/orgs/marp-team/discussions) and [docs](https://marpit.marp.app).
 
 
 
@@ -117,6 +115,7 @@ The `---` sequence works as the slide delimiter.
 
 ---
 
+
 # Slide layouts
 
 Slide layout can be modified using class directives `<!-- _class: classname -->`:
@@ -142,9 +141,9 @@ Combine classes: `<!-- _class: center middle huge -->`
 
 Use [Marp image syntax](https://marpit.marp.app/image-syntax) to include an image:
 ```markdown
-![height:150px](img/transformer.png)
+![h:150px](img/transformer.png)
 ```
-![height:100px](img/transformer.png)
+![h:100px](img/transformer.png)
 
 
 Or [enable HTML](https://github.com/orgs/marp-team/discussions/349#discussioncomment-3618297) to use `<img>` elements:
@@ -209,16 +208,19 @@ function greet(name) {
 # Tables
 <!-- _class: tablewide source -->
 
-| Model         | BLEU ↑   | ROUGE-L ↑ | Parameters | Training Time |
-| ------------- | -------- | --------- | ---------- | ------------- |
-| Transformer   | 34.2     | 56.8      | 110M       | 12h           |
-| GPT-3.5       | 38.7     | 61.2      | 175B       | -             |
-| **Our Model** | **41.3** | **64.1**  | 125M       | 8h            |
+| Model     | Metric 1 | Metric 2 |        Rating        |
+| --------- | -------: | :------: | :------------------: |
+| not LLM 1 |     14.5 |    🟠     |       Mediocre       |
+| not LLM 2 |      5.5 |    🔶     |        Worst         |
+| not LLM 3 |      6.9 |    🟧     |      Even worse      |
+| LLM       | **99.8** |    🧡     | Greatest thing ever! |
 
 <sub>[**source**: Our experiments](https://github.com/ufal)</sub>
 
 - The `tablewide` class stretches the table to full width.
-- You can add the source link (or any other text) to the top right <br>using the `<!-- _header: text -->` directive.
+- You can add a source link using the `<sub>` tag.
+  - Use the `source` slide class to have such a link in the top right corner.
+
 
 
 
@@ -260,7 +262,7 @@ text
 
 ---
 
-<!-- When we use `bg` on the slide, it is currently not possible to use the `h1` header. Instead, we can use the `_header` directive. -->
+<!-- When we use `bg` on the slide, it is currently not possible to use the `h1` header. Instead, we need to use the `_header` directive. -->
 
 <!-- _header: Development -->
 
@@ -273,8 +275,6 @@ Also see the following settings:
 - `markdown.marp.html`: Set to `all` <small>(if you trust your code)</small>.
   
 ![bg contain right 50%](img/vscode.png)
-
-
 
 ---
 
@@ -325,7 +325,7 @@ $ marp slide-deck.md -o converted.pptx
 
 <!-- _class: summary center -->
 
-#### Thank you for using the template!
+#### Marp is cool
 ## Takeaways
 
 Marp is easy to learn and easy to use.
@@ -335,7 +335,7 @@ Give **Marp** a chance! 😎
 
 ---
 
-# Bonus
+# Bonus (to be updated)
 
 ## Panels
 
