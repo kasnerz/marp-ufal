@@ -327,10 +327,10 @@ $ marp slide-deck.md -o converted.pptx
 ## Summary
 
 - This template is... 
-  - not as tremendous as the LaTeX one.
-  - not that easy to collaborate on as the Google Slides one.
-  - not equipped with as many features as the SliMD one.
-- But it is simple to use and looks great.
+  - *not* as tremendous as the LaTeX one.
+  - *not* that easy to collaborate on as the Google Slides one.
+  - *not* equipped with as many features as the SliMD one.
+- **But it is simple to use and looks great.**
 
 
 ### [https://github.com/kasnerz/marp-ufal](https://github.com/kasnerz/marp-ufal)

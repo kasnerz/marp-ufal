@@ -710,7 +710,6 @@ img[alt~="i"] {
 
 img[alt~="b"] {
     border: 1px solid grey;
-    border-radius: 0.2em;
     padding: 0.1em;
 }
 
