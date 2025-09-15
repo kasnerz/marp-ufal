@@ -33,6 +33,11 @@ li>ol {
     margin-top: 0px;
 }
 
+ol>li>ul>li:first-child {
+    margin-top: -0.5em;
+    /* or whatever smaller value you prefer */
+}
+
 ol {
     margin-left: 4px;
 }
