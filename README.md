@@ -4,10 +4,18 @@ A slide template for ÚFAL presentations with [Marp](https://marp.app/).
 
 Inspired by the Jindřich Libovický's [ÚFAL Google Slides template](https://docs.google.com/presentation/d/1cE1fyaG9qWXJo5Upzi_i8mXMqUGbuYDgwqvHGYRgBSE/edit?usp=sharing) and Milan Straka's [SliMD template](https://github.com/ufal/slimd).
 
+See also 👉️ **[ÚFAL Typst template](https://github.com/kasnerz/marp-ufal)**.
+
+<img src="img/marp.png" width="200px"/>
+<br>
+<br>
 <p>
 <img src="img/title.png" width="300px"/>
 <img src="img/table.png" width="300px"/>
 </p>
+
+
+
 
 ## Main Features
 
@@ -16,9 +24,21 @@ Inspired by the Jindřich Libovický's [ÚFAL Google Slides template](https://do
 * **Multiple export formats:** Export to PDF, HTML, or PPTX.
 * **LaTeX support**: Mathematical typesetting with MathJax/KaTeX.
 * **HTML integration:** Use advanced HTML snippets alongside Markdown.
-* **Consistency:** Everything is nice and aligned without too much effort.
+* **Consistency:** Everything is nicely aligned without too much effort.
 * **Auto footer**: No more manual copying of the bottom orange bar 💪
 * **Popular framework**:  Marp has good [user support](https://github.com/orgs/marp-team/discussions) and [docs](https://marpit.marp.app).
+
+
+## Marp vs Typst ⚔️
+
+Should I use the **Marp template** (this one) or the [Typst template](https://github.com/kasnerz/typst-slides-ufal)?
+
+| Marp                                  | Typst                               |
+| ------------------------------------- | ----------------------------------- |
+| ✅ Simpler markup language             | ✅ Nicer markup language             |
+| ✅ Interactive content (video, audio)  | ✅ More powerful layout handling     |
+| ❌ Need to use HTML for advanced stuff | ✅ Online collaboration              |
+|                                       | ❌ PDF-only - no interactive content |
 
 
 ## Quickstart
