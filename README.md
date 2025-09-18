@@ -4,7 +4,7 @@ A slide template for ÚFAL presentations with [Marp](https://marp.app/).
 
 Inspired by the Jindřich Libovický's [ÚFAL Google Slides template](https://docs.google.com/presentation/d/1cE1fyaG9qWXJo5Upzi_i8mXMqUGbuYDgwqvHGYRgBSE/edit?usp=sharing) and Milan Straka's [SliMD template](https://github.com/ufal/slimd).
 
-See also 👉️ **[ÚFAL Typst template](https://github.com/kasnerz/marp-ufal)**.
+See also 👉️ **[ÚFAL Typst template](https://github.com/kasnerz/typst-slides-ufal)**.
 
 <img src="img/marp.png" width="200px"/>
 <br>
