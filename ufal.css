@@ -132,6 +132,10 @@ section.huge {
     font-size: 38px;
 }
 
+section.smaller {
+    font-size: 25px;
+}
+
 section.small {
     font-size: 20px;
 }
