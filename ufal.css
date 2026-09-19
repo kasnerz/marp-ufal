@@ -2,7 +2,8 @@
 /* Inspired by Milan Straka's SliMD: https://github.com/ufal/slimd */
 /* @theme ufal */
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Fira+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+/* Fira Sans + Fira Mono, self-hosted so that a deck needs no network. */
+@import 'ufal-fonts';
 
 /* Colors */
 :root {
